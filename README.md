@@ -5,3 +5,8 @@ My Kubernetes manifests for various things
 Heapster/Grafana/Influx stuff
 * Pulled from [kubernetes/heapster](https://github.com/kubernetes/heapster)
 * Direct Link: https://github.com/kubernetes/heapster/tree/abbfe6e0868f96b3c47794b55c61e7ce2ca62305/deploy/kube-config/influxdb
+
+oVirt stuff
+* https://hub.docker.com/r/rmohr/ovirt-engine/
+* https://hub.docker.com/r/rmohr/ovirt-postgres/
+* https://hub.docker.com/_/postgres/
