@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2017-03-18T19:17:44Z
+  name: monitoring-influxdb
+  namespace: kube-system
+  resourceVersion: "5744"
+  selfLink: /api/v1/namespaces/kube-system/services/monitoring-influxdb
+  uid: 90527bdb-0c0f-11e7-9bd9-00e07041ea76
+spec:
+  externalName: logs.lab.home.spacecricket.net
+  ports:
+  - port: 8086
+    protocol: TCP
+    targetPort: 8086
+  sessionAffinity: None
+  type: ExternalName
+status:
+  loadBalancer: {}
+

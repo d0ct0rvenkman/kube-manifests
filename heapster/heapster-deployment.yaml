@@ -1,0 +1,60 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "4"
+  creationTimestamp: 2017-03-18T19:58:01Z
+  generation: 4
+  labels:
+    k8s-app: heapster
+    task: monitoring
+  name: heapster
+  namespace: kube-system
+  resourceVersion: "11167826"
+  selfLink: /apis/extensions/v1beta1/namespaces/kube-system/deployments/heapster
+  uid: 31176869-0c15-11e7-9bd9-00e07041ea76
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: heapster
+      task: monitoring
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        k8s-app: heapster
+        task: monitoring
+    spec:
+      containers:
+      - command:
+        - /heapster
+        - --source=kubernetes:http://172.16.10.129:8080?inClusterConfig=false
+        - --sink=influxdb:http://monitoring-influxdb:8086
+        image: gcr.io/google_containers/heapster-amd64:v1.3.0-beta.1
+        imagePullPolicy: IfNotPresent
+        name: heapster
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: 2017-03-18T19:58:01Z
+    lastUpdateTime: 2017-03-18T19:58:01Z
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 4
+  replicas: 1
+  updatedReplicas: 1
+

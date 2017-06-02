@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2017-03-18T19:58:00Z
+  labels:
+    kubernetes.io/cluster-service: "true"
+    kubernetes.io/name: monitoring-grafana
+  name: monitoring-grafana
+  namespace: kube-system
+  resourceVersion: "33606"
+  selfLink: /api/v1/namespaces/kube-system/services/monitoring-grafana
+  uid: 307f3aac-0c15-11e7-9bd9-00e07041ea76
+spec:
+  clusterIP: 192.168.69.153
+  ports:
+  - nodePort: 32063
+    port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    k8s-app: grafana
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
+
