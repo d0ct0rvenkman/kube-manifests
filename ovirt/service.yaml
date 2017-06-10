@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ovirt-engine
+spec:
+  clusterIP: 192.168.69.22
+  ports:
+    - name: engine
+      port: 80
+      protocol: TCP
+      targetPort: engine
+    - name: engine-tls
+      port: 443
+      protocol: TCP
+      targetPort: engine-tls
+    - name: spice-proxy
+      port: 3128
+      protocol: TCP
+      targetPort: spice-proxy
+  selector:
+    app: ovirt-engine
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

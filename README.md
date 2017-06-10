@@ -10,3 +10,5 @@ oVirt stuff
 * https://hub.docker.com/r/rmohr/ovirt-engine/
 * https://hub.docker.com/r/rmohr/ovirt-postgres/
 * https://hub.docker.com/_/postgres/
+* https://github.com/rmohr/docker-ovirt-engine/tree/master/4.0
+* https://github.com/oVirt/ovirt-container-engine/tree/master/manifests !!!!
